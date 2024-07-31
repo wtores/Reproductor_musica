@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sección de Bienvenida -->
+    <div id="welcome-section" class="welcome-container">
+        <h1>Bienvenidos</h1>
+        <p>¡Bienvenido a nuestro reproductor de música!</p>
+        <div><img class="bienvenidos" src="portada/bienvenida2.png" alt=""></div>
+        <a href="#" id="start-button" class="start-button">Iniciar</a>
+    </div>
+
+    <!-- Sección del Reproductor -->
+    <div id="player-section" class="container" style="display: none;">
+        <h1>Reproductor de Música</h1>
+        <div class="playlist-selector">
+            <label for="playlist">Selecciona una lista de reproducción:</label>
+            <select id="playlist">
+                <option value="feid">Feid</option>
+                <option value="otros">Bad Bunny</option>
+            </select>
+        </div>
+
+        <div class="player">
+            <div class="now-playing">Reproduciendo ahora: <span id="current-song">Ninguna canción</span></div>
+
+            <!-- Portada de la imagen -->
+
+            <div class="cover-container">
+                <img id="cover-image" src="img/" alt="" class="cover-image">
+            </div>
+            
+            <!-- Barra de progreso -->
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+
+            <!-- Visualización del tiempo -->
+            <div class="time-display">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+            <audio id="audio-player" src=""></audio>
+            <div class="controls">
+                <button id="random-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24px" height="24px">
+                        <path d="M6 18l12-12M6 6l12 12" />
+                    </svg>
+                </button>
+                <button id="prev-btn">
+                    <!-- Icono de retroceder -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24px" height="24px">
+                        <path d="M15 18l-6-6 6-6v12z"/>
+                    </svg>
+                </button>
+                <button id="play-pause-btn">
+                    <!-- Icono de play/pause inicializado como play -->
+                    <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24px" height="24px">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <!-- Icono de pausa oculto inicialmente -->
+                    <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24px" height="24px" style="display: none;">
+                        <path d="M6 19h4V5H6zm8-14v14h4V5z"/>
+                    </svg>
+                </button>
+                <button id="next-btn">
+                    <!-- Icono de adelantar -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24px" height="24px">
+                        <path d="M9 18l6-6-6-6v12z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Botón para ver la lista de reproducción -->
+            <button id="view-playlist-btn" class="view-playlist-button">Ver lista de reproducción</button>
+
+            
+        </div>
+
+        <!-- Sección de la lista de reproducción -->
+        <div id="playlist-section" class="playlist-section" style="display: none;">
+            <h2>Lista de Reproducción</h2>
+            <ul id="playlist-items">
+            </ul>
+            <button id="close-playlist-btn" class="view-playlist-button">Cerrar</button>
+        </div>
+       
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
